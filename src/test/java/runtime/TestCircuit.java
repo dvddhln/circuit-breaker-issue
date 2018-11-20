@@ -60,8 +60,7 @@ public class TestCircuit {
         WebArchive deployment = ShrinkWrap.create(WebArchive.class);
 
         deployment.addPackage(CircuitApplication.class.getPackage());
-        deployment.addAsManifestResource(new FileAsset(new File("src/test/java/resources/microprofile-config.properties")),
-                "microprofile-config.properties");
+        deployment.addAsResource("project-defaults.yml", "project-defaults.yml");
         return deployment;
     }
 
